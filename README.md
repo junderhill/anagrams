@@ -1,0 +1,4 @@
+anagrams
+========
+
+Anagrams Code Kata
