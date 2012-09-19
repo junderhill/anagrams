@@ -8,3 +8,6 @@ gem 'guard-bundler'
 
 gem 'rb-fsevent'
 gem 'growl' 
+
+gem 'excellent'
+gem 'reek'
