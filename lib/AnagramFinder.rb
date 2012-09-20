@@ -6,22 +6,22 @@ class AnagramFinder
 	
 	
 	def initialize(filename)
-		@words = LoadWords(filename)
+		@words = load_words(filename)
 	end
 	
-	def LoadWords(filename)
+	def load_words(filename)
 		File.readlines(filename).collect {|line| line.gsub(/[^a-z]/i, '')}
 	end
 	
-	def CalculatePrimeFactorValueForWord(word)
+	def calculate_primefactor_value_for_word(word)
 		word.downcase.each_char.inject(1) {|result, c| result * CHAR_MAP[c] }
 	end
 	
 	def get_hash_of_words_by_value
-    wordvaluehash = @words.group_by { |word| CalculatePrimeFactorValueForWord(word) }
+    wordvaluehash = @words.group_by { |word| calculate_primefactor_value_for_word(word) }
 	end
 	
-	def FindAnagrams
+	def find_anagrams
 	    puts('Anagrams:')
 	    
 	    wordvaluehash = get_hash_of_words_by_value

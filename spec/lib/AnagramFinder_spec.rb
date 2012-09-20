@@ -1,6 +1,6 @@
 require "AnagramFinder"
 
-describe "LoadWords" do
+describe "load_words" do
 	before(:each) do
 		@anagramFinder = AnagramFinder.new('dict45k.txt')
 	end
@@ -23,19 +23,19 @@ describe "CalculatePrimeFactorTotalForWord" do
 	end
 	
 	it "should return 1 if empty string is passed" do
-		@anagramFinder.CalculatePrimeFactorValueForWord("").should == 1
+		@anagramFinder.calculate_primefactor_value_for_word("").should == 1
 	end
 	
 	it "should return 2 if 'a' is passed" do
-		@anagramFinder.CalculatePrimeFactorValueForWord("a").should == 2
+		@anagramFinder.calculate_primefactor_value_for_word("a").should == 2
 	end
 	
 	it "should return  if 'london' is passed" do
-		@anagramFinder.CalculatePrimeFactorValueForWord("london").should == 1057870219
+		@anagramFinder.calculate_primefactor_value_for_word("london").should == 1057870219
 	end
 	
 	it "should return  if 'LoNdOn' is passed" do
-		@anagramFinder.CalculatePrimeFactorValueForWord("LoNdOn").should == 1057870219
+		@anagramFinder.calculate_primefactor_value_for_word("LoNdOn").should == 1057870219
 	end
 end  
   
@@ -52,12 +52,12 @@ end
 #
 #  it "outputs the title anagrams to terminal" do
 #    subject.should_receive(:puts).at_least(1).times.with("Anagrams:")
-#    subject.FindAnagrams
+#    subject.find_anagrams
 #  end
 #  
 #  it "outputs listen, followed by silent" do
 #    subject.should_receive(:puts).at_least(1).times.with("listen, silent")
-#    subject.FindAnagrams
+#    subject.find_anagrams
 #  end   
 #end
 	
