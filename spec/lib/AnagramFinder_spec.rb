@@ -39,13 +39,25 @@ describe "CalculatePrimeFactorTotalForWord" do
 	end
 end  
   
-describe "Find Anagrams" do
-  before(:each) do
-    @anagramFinder = AnagramFinder.new('testWords.txt')
-  end
-  
-  it "" do
+describe "Hash words by value" do
+    subject { AnagramFinder.new('testWords.txt') }
     
-  end
-end
+    it "should return a hash table" do
+      subject.get_hash_of_words_by_value.length.should > 0
+    end
+end  
+  
+#describe "Find Anagrams" do
+#  subject { AnagramFinder.new('testWords.txt') }
+#
+#  it "outputs the title anagrams to terminal" do
+#    subject.should_receive(:puts).at_least(1).times.with("Anagrams:")
+#    subject.FindAnagrams
+#  end
+#  
+#  it "outputs listen, followed by silent" do
+#    subject.should_receive(:puts).at_least(1).times.with("listen, silent")
+#    subject.FindAnagrams
+#  end   
+#end
 	

@@ -17,7 +17,18 @@ class AnagramFinder
 		word.downcase.each_char.inject(1) {|result, c| result * CHAR_MAP[c] }
 	end
 	
+	def get_hash_of_words_by_value
+    wordvaluehash = @words.group_by { |word| CalculatePrimeFactorValueForWord(word) }
+	end
+	
 	def FindAnagrams
+	    puts('Anagrams:')
 	    
+	    wordvaluehash = get_hash_of_words_by_value
+	    wordvaluehash.each { |value, words|
+	      if words.length > 1
+	          puts words.join(', ')
+        end
+      }
   end
 end
